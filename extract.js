@@ -61,16 +61,16 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 					console.log("[INFO] Extracted source file");
 				} catch (e) {
 					console.log("[ERROR] Could not write output file: " + path);
-					console.log(e);
+					console.error(e);
 				}
 			});
 			console.log("");
 			console.log("[INFO] Finished extracting " + sourceFilePaths.length + " file(s) from source map " + (sourceIndex+1));
 		} catch (e) {
-			console.log("[ERROR] Could not write metadata file: ", e);
+			console.error("[ERROR] Could not write metadata file: ", e);
 		}
 	} catch(e) {
-		console.log("[ERROR] Could not load source map " + (sourceIndex+1) + ": ", e);
+		console.error("[ERROR] Could not load source map " + (sourceIndex+1) + ": ", e);
 	}
 	console.log("");
 });
