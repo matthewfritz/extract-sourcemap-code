@@ -1,6 +1,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 
+console.log("==============================");
+console.log("EXTRACT JS/CSS SOURCE MAP CODE");
+console.log("By Matthew Fritz");
+console.log("==============================");
+console.log("");
+
 const sourcePathArray = process.argv.slice(2); // don't process "node" or the script name
 console.log("[INFO] Processing " + sourcePathArray.length + " source map file(s)...");
 console.log("");
@@ -44,7 +50,7 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 
 			// make the directory and then write the extracted metadata
 			console.log("[INFO] Creating metadata file " + (sourceIndex+1) + "...");
-			fs.mkdirsSync(dirName);
+			fs.ensureDirSync(dirName);
 			fs.writeJsonSync(metadataFilePath, metadataObj, {spaces: 3});
 			console.log("[INFO] Metadata file created");
 			console.log("");
