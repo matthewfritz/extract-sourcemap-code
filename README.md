@@ -6,6 +6,8 @@ This is just a small tool for my own purposes to make viewing the original code 
 
 ## Usage
 
+As this tool relies on the `fs-extra` module, please ensure you run `npm install` to install the necessary modules first.
+
 ```
 node extract.js /path/to/sourceMapFile1 /path/to/sourceMapFile2 /path/to/sourceMapFile3
 ```

@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/matthewfritz/extract-sourcemap-code#readme",
   "dependencies": {
-    "node-fs-extra": "^0.8.2"
+    "fs-extra": "^10.0.0"
   }
 }

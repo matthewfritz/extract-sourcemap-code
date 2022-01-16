@@ -1,4 +1,4 @@
-const fs = require('node-fs-extra');
+const fs = require('fs-extra');
 const path = require('path');
 
 const sourcePathArray = process.argv.slice(2); // don't process "node" or the script name
