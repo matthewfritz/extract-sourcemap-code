@@ -1,0 +1,22 @@
+{
+  "name": "extract-sourcemap-code",
+  "version": "1.0.0",
+  "description": "A small NodeJS utility to extract code from a source map and attempts to re-create the structure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewfritz/extract-sourcemap-code.git"
+  },
+  "author": "Matthew Fritz <mattf@burbankparanormal.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewfritz/extract-sourcemap-code/issues"
+  },
+  "homepage": "https://github.com/matthewfritz/extract-sourcemap-code#readme",
+  "dependencies": {
+    "node-fs-extra": "^0.8.2"
+  }
+}
