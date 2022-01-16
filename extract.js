@@ -21,10 +21,14 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 	let metadataFileName = "metadata_" + path.basename(sourceMapPath);
 	let metadataFilePath = dirName + "/" + metadataFileName;
 
-	console.log("[INFO] Loading source map " + (sourceIndex+1) + ": " + sourceMapPath);
+	console.log("--------------------");
+	console.log("SOURCE MAP " + (sourceIndex+1) + " DETAILS");
+	console.log("--------------------");
+	console.log("Output directory " + (sourceIndex+1) + ": " + dirName);
+	console.log("Metadata output file " + (sourceIndex+1) + ": " + metadataFilePath);
 	console.log("");
-	console.log("[INFO] Output directory " + (sourceIndex+1) + ": " + dirName);
-	console.log("[INFO] Metadata output file " + (sourceIndex+1) + ": " + metadataFilePath);
+
+	console.log("[INFO] Loading source map " + (sourceIndex+1) + ": " + sourceMapPath);
 	console.log("");
 
 	try {
@@ -60,20 +64,20 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 			console.log("");
 
 			// iterate over the source code mappings and extract
-			console.log("[INFO] Extracting " + sourceFilePaths.length + " source file(s) from source map " + (sourceIndex+1) + "...");
+			console.log("[INFO] Processing " + sourceFilePaths.length + " source file(s) from source map " + (sourceIndex+1) + "...");
 			console.log("");
 			let extractSuccessCount = 0;
 			let extractFailureCount = 0;
 			sourceFilePaths.forEach(function(path, index) {
 				try {
 					// write the matching indexed content from the sourceContent object
-					console.log("[INFO] (" + (index+1) + "/" + sourceFilePaths.length + ") Extracting source file: " + path);
+					console.log("* (" + (index+1) + "/" + sourceFilePaths.length + ") Extracting source file: " + path);
 					let fileContent = sourceMapObj.sourcesContent[index];
 					fs.outputFileSync(dirName + "/" + path, fileContent);
-					console.log("[INFO] (" + (index+1) + "/" + sourceFilePaths.length + ") Extracted source file");
+					console.log("* (" + (index+1) + "/" + sourceFilePaths.length + ") Extracted source file");
 					extractSuccessCount++;
 				} catch (e) {
-					console.log("[ERROR] (" + (index+1) + "/" + sourceFilePaths.length + ") Could not write output file: " + path);
+					console.log("* [ERROR] (" + (index+1) + "/" + sourceFilePaths.length + ") Could not write output file: " + path);
 					console.error(e);
 					extractFailureCount++;
 				}
@@ -102,6 +106,7 @@ console.log("----------");
 console.log("Total source map files processed: " + sourcePathArray.length);
 console.log("Total source map files extracted: " + sourceMapSuccessCount);
 console.log("Total source map files failed: " + sourceMapFailureCount);
+console.log("Total source files processed: " + (runningSuccessTotal + runningFailureTotal));
 console.log("Total source files extracted: " + runningSuccessTotal);
 console.log("Total source files failed: " + runningFailureTotal);
 
