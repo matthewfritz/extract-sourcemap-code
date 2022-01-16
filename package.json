@@ -1,7 +1,7 @@
 {
   "name": "extract-sourcemap-code",
   "version": "1.0.0",
-  "description": "A small NodeJS tool to extract code from a source map and re-create the structure.",
+  "description": "A small NodeJS tool to extract code from one or more JS or CSS source map file(s) and re-create the structure of the original source files.",
   "main": "extract.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,6 +1,6 @@
 # Extract Source Map Code
 
-A small NodeJS tool to extract code from a source map and re-create the structure of the original files.
+A small NodeJS tool to extract code from one or more JS or CSS source map file(s) and re-create the structure of the original source files.
 
 This is just a small tool for my own purposes to make viewing the original code from a source map easier.
 
