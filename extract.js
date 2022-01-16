@@ -55,7 +55,7 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 			sourceFilePaths.forEach(function(path, index) {
 				try {
 					// write the matching indexed content from the sourceContent object
-					console.log("[INFO] Extracting source file " + (index+1) + ": " + path);
+					console.log("[INFO] Extracting source file (" + (index+1) + "/" + sourceFilePaths.length + "): " + path);
 					let fileContent = sourceMapObj.sourcesContent[index];
 					fs.outputFileSync(dirName + "/" + path, fileContent);
 					console.log("[INFO] Extracted source file");
