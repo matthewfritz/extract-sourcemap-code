@@ -7,7 +7,7 @@ This is just a small tool for my own purposes to make viewing the original code 
 ## Usage
 
 ```
-node extract.js sourceFilePath1.map sourceFilePath2.map sourceFilePath3.map
+node extract.js /path/to/sourceMapFile1 /path/to/sourceMapFile2 /path/to/sourceMapFile3
 ```
 
 The tool can accept one or more command-line arguments, each representing the path to a source map file.
