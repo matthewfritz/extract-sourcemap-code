@@ -43,7 +43,7 @@ sourcePathArray.forEach(function(sourceMapPath, sourceIndex) {
 			};
 
 			// make the directory and then write the extracted metadata
-			console.log("[INFO] Creating metadata file...");
+			console.log("[INFO] Creating metadata file " + (sourceIndex+1) + "...");
 			fs.mkdirsSync(dirName);
 			fs.writeJsonSync(metadataFilePath, metadataObj, {spaces: 3});
 			console.log("[INFO] Metadata file created");
